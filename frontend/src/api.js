@@ -1,4 +1,5 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://expert-booking-backend-9baf.onrender.com'
+';
 
 const request = async (url, options = {}) => {
   const response = await fetch(url, {
