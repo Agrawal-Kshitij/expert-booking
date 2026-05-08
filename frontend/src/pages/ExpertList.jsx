@@ -39,7 +39,13 @@ const ExpertList = () => {
 
   return (
     <section className="page-container">
-      <h1>Experts</h1>
+      <div className="section-heading">
+        <div>
+          <h1>Find your expert</h1>
+          <p>Search by category, experience, and rating. Book a session instantly with real-time availability.</p>
+        </div>
+      </div>
+      <div className="highlight-bar" />
       <form className="filter-row" onSubmit={handleSearch}>
         <input
           value={search}
@@ -64,10 +70,11 @@ const ExpertList = () => {
       <div className="grid-list">
         {experts.map((expert) => (
           <article key={expert._id} className="card">
-            <h2>{expert.name}</h2>
-            <div className="meta">{expert.category}</div>
-            <p>Experience: {expert.experience} years</p>
-            <p>Rating: {expert.rating.toFixed(1)}</p>
+            <div>
+              <div className="pill">{expert.category}</div>
+              <h2>{expert.name}</h2>
+              <p className="meta">{expert.experience} years experience • Rating {expert.rating.toFixed(1)}</p>
+            </div>
             <Link className="button" to={`/experts/${expert._id}`}>View details</Link>
           </article>
         ))}
